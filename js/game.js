@@ -1,15 +1,12 @@
 let canvas;
-let ctx;   //abkürzung context
-let character = new Image();
+let world;
 
 function init() {
+
     canvas = document.getElementById('canvas');
+    world = new World(canvas);
 
-    ctx = canvas.getContext('2d');
+   
 
-    character.src = 'img/2_character_pepe/2_walk/W-21.png';
-
-    setTimeout(function () {
-        ctx.drawImage(character, 20, 20, 50, 150);
-    }, 1000);
+    console.log('My Character is', world.character);
 }
