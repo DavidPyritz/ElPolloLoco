@@ -1,0 +1,47 @@
+<body onload="animateIntro()">
+    <div class="intro-container">
+      <img
+        id="intro-logo"
+        class="intro-logo hidden-mobile"
+        src="img\9_intro_outro_screens\start\startscreen_1.png"
+      />
+      <img
+        id="intro-mobile-logo"
+        class="intro-logo hidden-desktop"
+        src="assets/img/join_logo_white.svg"
+      />
+    </div>
+  </body>
+
+
+function animateIntro() {
+  if (window.innerWidth > 700) {
+    introAnimationDesktop();
+  } else {
+    introAnimationMobile();
+  }
+}
+
+
+
+erstelle einen einfachen startbildschirm mit einer png, wobei nach 5 sekunden alles andere geladen werden soll: html: <body onload="init()">
+    <div class="intro-container">
+        <img id="startscreen" class="intro-logo" src="img\9_intro_outro_screens\start\startscreen_1.png" />
+
+        <h1>El Pollo Loco</h1>
+
+        <canvas id="canvas" width="720" height="480">
+        </canvas>
+
+</body> javascript: function animateIntro() {
+    if (window.innerWidth > 700) {
+        introAnimationDesktop();
+    } else {
+        introAnimationMobile();
+    }
+}
+
+
+
+<div class="intro-container">
+        <img id="startscreen" class="intro-logo" src="img\9_intro_outro_screens\start\startscreen_1.png" />
