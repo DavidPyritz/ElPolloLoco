@@ -1,14 +1,15 @@
 class Character extends MovableObject {
-
-    height = 230;
-    y = 80;
+    world;
+    height = 250;
+    width = 140;
+    y = 100;
     speed = 10;
 
     offset = {
-        top: 90,
-        left: 20,
-        right: 20,
-        bottom: 10
+        top: 80,
+        bottom: 10,
+        left: 10,
+        right: 10,
     };
 
     IMAGES_WALKING = [
@@ -49,12 +50,12 @@ class Character extends MovableObject {
         'img/2_character_pepe/4_hurt/H-43.png'
     ];
 
-    world;
+    
     walking_sound = new Audio('audio/walking.mp3');
 
     constructor() {
         super().loadImage('img/2_character_pepe/2_walk/W-21.png');
-        
+
         this.soundManager = soundManager;
         this.world = { keyboard: {} };
 
@@ -108,7 +109,8 @@ class Character extends MovableObject {
     jump() {
         this.speedY = 30;
     }
+
+    jumpOn(enemy) {
+        enemy.die();
+      }
 }
-
-
-

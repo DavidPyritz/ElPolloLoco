@@ -12,11 +12,33 @@ https://gwfh.mranftl.com/fonts/jacques-francois-shadow?subsets=latin
 
 
 
-pepe läuft
+walking
 https://freesound.org/people/felix.blume/sounds/705744/
 
-hintergund music
+Background Music
 https://freesound.org/people/AudioCoffee/sounds/709989/
 
-hühnchen stirbt
+Chicken Die
 https://cdn.freesound.org/previews/673/673255_14693005-lq.mp3
+
+
+
+
+Achtung muss noch hinzugefügt werden
+Flasche werfen
+https://freesound.org/people/cabled_mess/sounds/352068/
+
+Münzen einsammeln
+https://freesound.org/people/bradwesson/sounds/135936/
+
+Endboss Schrei
+https://freesound.org/people/esperar/sounds/170807/
+
+Endboss stirbt
+https://freesound.org/people/pionium/sounds/40729/
+
+Flasche einsammeln
+https://freesound.org/people/DrinkingWindGames/sounds/684015/
+
+Character bekommt Schaden
+https://freesound.org/people/thecheeseman/sounds/44428/

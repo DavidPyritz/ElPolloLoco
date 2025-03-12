@@ -17,6 +17,7 @@ class StatusBarCoin extends DrawableObject {
         this.loadImages(this.IMAGES);
         this.x = 80;
         this.y = 20;
+        this.y = window.innerWidth <= 720 ? 90 : 20; // 🔥 Weiter unten in der Responsive-Ansicht
         this.width = 190;
         this.height = 40;
         this.setPercantage(0);

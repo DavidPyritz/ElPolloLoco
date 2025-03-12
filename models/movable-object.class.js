@@ -1,5 +1,5 @@
 class MovableObject extends DrawableObject {
-    speed = 0.15;                                //nur für bewegbare Objekte
+    speed;                                //nur für bewegbare Objekte
     otherDirection = false;
     speedY = 0;
     acceleration = 2.5;
@@ -22,11 +22,20 @@ class MovableObject extends DrawableObject {
         }, 1000 / 25);
     }
 
+    isColliding(mo) {
+        return (
+            this.x + this.width - this.offset.right > mo.x + mo.offset.left &&
+            this.x + this.offset.left < mo.x + mo.width - mo.offset.right &&
+            this.y + this.height - this.offset.bottom > mo.y + mo.offset.top &&
+            this.y + this.offset.top < mo.y + mo.height - mo.offset.bottom
+        );
+    }
+
     isAboveGround() {                                        //funktion sollte nur bewegliches Objekt haben
         if (this instanceof ThrowableObject) {               //Throable object should always fall
             return true;
         } else {
-            return this.y < 180;
+            return this.y < 170;
         }
     }
 
@@ -40,9 +49,9 @@ class MovableObject extends DrawableObject {
     }
 
     isHurt() {
-        let timepassed = new Date().getTime() - this.lastHit; // Difference in ms
-        timepassed = timepassed / 1000;                       // Difference in s                       
-        return timepassed < 1;                                //console.log(timepassed); über dem return timepassed < 1; einfügen     
+        let timepassed = new Date().getTime() - this.lastHit;
+        // console.log("⏳ Zeit seit letztem Treffer:", timepassed, "ms");
+        return timepassed < 500; // Erhöht die Unverwundbarkeit auf 500ms
     }
 
     isDead() {
@@ -68,5 +77,9 @@ class MovableObject extends DrawableObject {
 
     jump() {
         this.speedY = 30;                       //so hoch kann pepe springen
+    }
+
+    jumpOn(enemy) {
+        enemy.die();
     }
 }

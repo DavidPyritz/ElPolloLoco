@@ -9,6 +9,7 @@ body {
     background-image: url('img/startbackground/desert-1052092_1920.jpg');
     overflow: hidden;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .content {
@@ -134,21 +135,273 @@ canvas {
     display: block;
 }
 
-@media only screen and(max-width: 720px){
-    canvas{
-        width: 100%;
-    }
+.end-buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
-@media only screen and(max-height: 480px){
-    canvas{
-        height: 100vh;
-    }
+.homebutton {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    background: linear-gradient(180deg, #ff9900, #cc6600);
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease-in-out;
 }
+
+.homebutton:hover {
+    background: linear-gradient(180deg, #ffaa00, #dd7700);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.homebutton:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
 
 .fullscreen {
     width: 100vw;
     height: 100vh;
+}
+
+
+
+/* Standardmäßig ist das Spiel sichtbar */
+#mainContent {
+    display: block;
+}
+
+/* Standardmäßig die Rotate-Meldung ausblenden */
+#rotate-message {
+    display: none;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    gap: 6px;
+    top: 475px;
+    font-family: 'Jacques Francois Shadow', sans-serif;
+    text-transform: uppercase; /* Buchstaben in Großschrift für bessere Lesbarkeit */
+    letter-spacing: 1px; /* Abstand zwischen Buchstaben für Klarheit */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für besseren Kontrast */
+}
+
+.footer a {
+    color: #ffb347; /* Gold-Orange für warme Akzente */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff8c00; /* Kräftiges Orange beim Hover */
+    text-decoration: underline;
+}
+
+.spanStyleFooter {
+    color: #f5d79f; /* Sandige Schriftfarbe */
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+#rotate-message p {
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* 📱 Wackel-Effekt für das Smartphone-Emoji */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+.shake {
+    display: inline-block;
+    animation: shake 1s infinite alternate ease-in-out;
+}
+
+/* 🔄 Dreh-Animation für das Symbol */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spin {
+    display: inline-block;
+    animation: spin 2s linear infinite;
+}
+
+
+.mobile-controls {
+    display: none;
+}
+
+
+
+@media (max-width: 720px) {
+
+    .mobile-controls {
+        position: fixed;
+        bottom: 5px;
+        left: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
+    /* 📌 Linke Steuerung (◀ ▶) */
+    .left-controls {
+        display: flex;
+        gap: 5px; /* 🔥 Kleinerer Abstand */
+        pointer-events: auto;
+        margin-left: 20px; /* 🔥 Leicht nach innen geschoben */
+    }
+
+    /* 📌 Rechte Steuerung (🔼 🍾) */
+    .right-controls {
+        display: flex;
+        gap: 5px; /* 🔥 Kleinerer Abstand */
+        pointer-events: auto;
+        margin-right: 60px; /* 🔥 Leicht nach innen geschoben */
+    }
+
+    /* 📌 Standard-Design für alle Buttons */
+    .control-btn {
+        background: none;
+        color: white;
+        border: 2px solid black;
+        font-size: 18px; /* 🔥 Kleinere Schrift */
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        min-width: 40px; /* 🔥 Kleinere Breite */
+        padding: 8px; /* 🔥 Weniger Padding */
+    }
+
+    .control-btn:active {
+        transform: scale(0.9);
+    }
+
+    h1 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 32px; /* Etwas größere Schrift für bessere Lesbarkeit */
+        width: 90%;
+    }
+
+    #rotate-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        font-size: 22px;
+        text-align: center;
+        z-index: 10000;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8); /* Halbtransparent, damit Footer sichtbar bleibt */
+        pointer-events: none; /* 🔥 Wichtig: Ermöglicht das Klicken durch das Overlay */
+    }
+
+    #rotate-message p {
+        pointer-events: auto; /* Nur der Text bleibt nicht klickbar, Footer ist anklickbar */
+    }
+
+    .buttons {
+        top: 120px;
+        right: 40px;
+    }
+
+    .responsButton {
+        display: none;
+    }
+
+    #rotate-message img {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    /* Das Spiel wird ausgeblendet, bis das Gerät gedreht wird */
+    #mainContent {
+        display: none;
+    }
+
+    /* Footer bleibt immer sichtbar und klickbar */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        z-index: 10001; /* Höher als `#rotate-message`, damit es klickbar bleibt */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer a {
+        color: #ffcc00;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Querformat auf Smartphones: Spiel anzeigen, Rotate-Meldung ausblenden */
+@media (max-width: 720px) and (orientation: landscape) {
+    #rotate-message {
+        display: none;
+    }
+
+    #mainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .d-none {

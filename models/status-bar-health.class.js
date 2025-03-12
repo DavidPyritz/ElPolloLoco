@@ -15,7 +15,7 @@ class StatusBarHealth extends DrawableObject {
         super();                               // super muss immer rein, damit die methode vom übergeordneten Objekt initialisiert wird
         this.loadImages(this.IMAGES);
         this.x = 100;
-        this.y = 0;
+        this.y = window.innerWidth <= 720 ? 70 : 0; // 🔥 Weiter unten in der Responsive-Ansicht
         this.width = 200;
         this.height = 40;
         this.setPercantage(100);

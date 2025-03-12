@@ -10,35 +10,36 @@ class StatusBarBoss extends DrawableObject {
 
     ];
 
-    percantage = 100;
+    percentage = 100;
 
     constructor() {
         super();                               // super muss immer rein, damit die methode vom übergeordneten Objekt initialisiert wird
         this.loadImages(this.IMAGES);
         this.x = 25;
-        this.y = 65;
+        this.y = window.innerWidth <= 720 ? 140 : 65; // 🔥 Weiter unten in der Responsive-Ansicht
         this.width = 190;
         this.height = 40;
         this.setPercantage(100);
     }
 
     // setPercantage(50) wird auf 50% gerundet
-    setPercantage(percantage) {
-        this.percantage = percantage;       // => 0 ... 5
+    setPercantage(percentage) {
+        this.percentage = Math.max(0, Math.min(100, percentage)); 
         let path = this.IMAGES[this.resolveImageIndex()];
         this.img = this.imageCache[path];
+        console.log(`Neue Boss-Statusbar: ${this.percentage}%`); 
     }
 
     resolveImageIndex() {
-        if (this.percantage > 81) {
+        if (this.percentage > 81) {
             return 5;
-        } else if (this.percantage > 61) {
+        } else if (this.percentage > 61) {
             return 4;
-        } else if (this.percantage > 41) {
+        } else if (this.percentage > 41) {
             return 3;
-        } else if (this.percantage > 21) {
+        } else if (this.percentage > 21) {
             return 2;
-        } else if (this.percantage > 1) {
+        } else if (this.percentage > 1) {
             return 1;
         } else {
             return 0;

@@ -15,7 +15,7 @@ class StatusBarBottle extends DrawableObject {
         super();                               // super muss immer rein, damit die methode vom übergeordneten Objekt initialisiert wird
         this.loadImages(this.IMAGES);
         this.x = 65;
-        this.y = 40;
+        this.y = window.innerWidth <= 720 ? 110 : 40; // 🔥 Weiter unten in der Responsive-Ansicht
         this.width = 175;
         this.height = 40;
         this.setPercantage(0);

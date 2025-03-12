@@ -1,16 +1,10 @@
 class Chicken extends MovableObject {
-
-    height = 70;
-    width = 100
-    y = 360
+    height = 60;
+    width = 90;
+    y = 353;
+    health = 20;
     isDead = false;
-
-    offset = {
-        top: 10,
-        left: 10,
-        right: 10,
-        bottom: 10
-    };
+    diechicken_sound = new Audio('audio/diechicken.mp3');
 
     IMAGES_WALKING = [
         'img/3_enemies_chicken/chicken_normal/1_walk/1_w.png',
@@ -18,24 +12,33 @@ class Chicken extends MovableObject {
         'img/3_enemies_chicken/chicken_normal/1_walk/3_w.png'
     ];
 
-
     //hühnchen töten
     IMAGES_DEADCHICK = [
         'img/3_enemies_chicken/chicken_normal/2_dead/dead.png'
     ];
 
-    diechicken_sound = new Audio('audio/diechicken.mp3');
+    offset = {
+        top: 0,
+        bottom: 0,
+        left: 5,
+        right: 5,
+    };
 
     constructor() {
         super().loadImage('img/3_enemies_chicken/chicken_normal/1_walk/1_w.png');
         this.loadImages(this.IMAGES_WALKING);
-
         this.loadImages(this.IMAGES_DEADCHICK);
-
-        this.x = 200 + Math.random() * 50000;
-        this.speed = 0.01 + Math.random() * 2;
-
+        this.isDead = false;
+        this.x = 900 + Math.random() * 1500;
+        this.speed = 1;
         this.animate();
+    }
+
+    takeDamage(amount) {
+        this.health = Math.max(0, this.health - amount);
+        if (this.health === 0) {
+            this.die();
+        }
     }
 
     animate() {
@@ -45,7 +48,9 @@ class Chicken extends MovableObject {
 
         //Hühnchen laufen
         setInterval(() => {
-            this.playAnimation(this.IMAGES_WALKING);
+            if (!this.isDead) {
+                this.playAnimation(this.IMAGES_WALKING);
+            }
         }, 200);
     }
 
