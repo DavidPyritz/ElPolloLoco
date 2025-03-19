@@ -1,3 +1,8 @@
+/**
+ * Represents the status bar for the Endboss in the game.
+ * Displays the boss's remaining health as a graphical bar.
+ * Inherits from `DrawableObject`.
+ */
 class StatusBarBoss extends DrawableObject {
 
     IMAGES = [
@@ -7,42 +12,45 @@ class StatusBarBoss extends DrawableObject {
         'img/7_statusbars/2_statusbar_endboss/blue/blue60.png',
         'img/7_statusbars/2_statusbar_endboss/blue/blue80.png',
         'img/7_statusbars/2_statusbar_endboss/blue/blue100.png'
-
     ];
 
     percentage = 100;
 
+    /**
+ * Creates a new `StatusBarBoss` instance.
+ * Initializes the position, size, and default health state.
+ */
     constructor() {
-        super();                               // super muss immer rein, damit die methode vom übergeordneten Objekt initialisiert wird
+        super();
         this.loadImages(this.IMAGES);
         this.x = 25;
-        this.y = window.innerWidth <= 720 ? 140 : 65; // 🔥 Weiter unten in der Responsive-Ansicht
+        this.y = 65;
         this.width = 190;
         this.height = 40;
         this.setPercantage(100);
     }
 
-    // setPercantage(50) wird auf 50% gerundet
+    /**
+ * Updates the health bar based on the given percentage.
+ * Ensures the percentage stays within the 0-100 range.
+ * @param {number} percentage - The new health percentage (0-100).
+ */
     setPercantage(percentage) {
-        this.percentage = Math.max(0, Math.min(100, percentage)); 
+        this.percentage = Math.max(0, Math.min(100, percentage));
         let path = this.IMAGES[this.resolveImageIndex()];
         this.img = this.imageCache[path];
-        console.log(`Neue Boss-Statusbar: ${this.percentage}%`); 
     }
 
+    /**
+ * Determines the correct health bar image index based on the boss's health.
+ * @returns {number} The index of the corresponding health bar image.
+ */
     resolveImageIndex() {
-        if (this.percentage > 81) {
-            return 5;
-        } else if (this.percentage > 61) {
-            return 4;
-        } else if (this.percentage > 41) {
-            return 3;
-        } else if (this.percentage > 21) {
-            return 2;
-        } else if (this.percentage > 1) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return this.percentage > 81 ? 5
+            : this.percentage > 61 ? 4
+                : this.percentage > 41 ? 3
+                    : this.percentage > 21 ? 2
+                        : this.percentage > 1 ? 1
+                            : 0;
     }
 }

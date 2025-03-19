@@ -5,55 +5,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum</title>
+  <style>
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: black;
+      font-size: 18px;
+      border: 2px solid black;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-<div class='impressum'><h1>Impressum</h1><p>Angaben gemäß § 5 TMG</p><p>David Pyritz <br>
+    .back-button:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
 
-  
-  </p><p> <strong>Vertreten durch: </strong><br>
-  David Pyritz
-  </p><p><strong>Kontakt:</strong> <br>
-  Telefon: <br>
-  E-Mail: <a href='mailto:#'></a></br></p><br> 
-  Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a href="https://www.kanzlei-hasselbach.de/standorte/frankfurt/" rel="nofollow">Kanzlei Hasselbach, Frankfurt</a> 
-  <br>
-  <br>
-<b>Icon im Browser Titel<b>
-Bild von <a href="https://pixabay.com/de/users/publicdomainpictures-14/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=316399">PublicDomainPictures</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=316399">Pixabay</a>
-<br>
-<b>Icon im Browser Titel<b>
-Hintergund Bild
-Bild von <a href="https://pixabay.com/de/users/rds2-451718/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1052092">Roger Sexton</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1052092">Pixabay</a>
-<br>
-<b>Schrift ist von<b>
-<a href="https://gwfh.mranftl.com/fonts/jacques-francois-shadow?subsets=latin">WebFontsHelper</a>
-<br>
-<b>walking<b>
-<a href="https://freesound.org/people/felix.blume/sounds/705744/">Freesound/felix.blume</a>
-<br>
-<b>Background Music<b>
-<a href="https://freesound.org/people/AudioCoffee/sounds/709989/">Freesound/AudioCoffee</a>
-<br>
-<b>Chicken Die<b>
-<a href="https://freesound.org/people/Preacher13/sounds/673255/">Freesound/Preacher13</a>
-<br>
-<b>throw bottle<b>
-<a href="https://freesound.org/people/cabled_mess/sounds/352068/">Freesound/cabled_mess</a>
-<br>
-<b>collect coin<b>
-<a href="https://freesound.org/people/bradwesson/sounds/135936/">Freesound/bradwesson</a>
-<br>
-<b>endboss cry<b>
-<a href="https://freesound.org/people/esperar/sounds/170807/">Freesound/esperar</a>
-<br>
-<b>endboss die<b>
-<a href="https://freesound.org/people/pionium/sounds/40729/">Freesound/pionium</a>
-<br>
-<b>collect bottle<b>
-<a href="https://freesound.org/people/DrinkingWindGames/sounds/684015/">Freesound/DrinkingWindGames</a>
-<br>
-<b>character get hurt<b>
-<a href="https://freesound.org/people/thecheeseman/sounds/44428/">Freesound/thecheeseman</a>
-<br>
-<br>
+    .back-button:active {
+      background-color: rgba(0, 0, 0, 0.2);
+      transform: translateY(1px);
+    }
+
+    .back-button i {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+
+      .impressum,
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .biglink {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100%;
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="javascript:history.back()" class="back-button">
+    <i>&#8592;</i> Zurück
+  </a>
+
+  <div class='impressum'>
+    <h1>Impressum</h1>
+    <p>Angaben gemäß § 5 TMG</p>
+    <p>David Pyritz <br></p>
+    <p><strong>Vertreten durch: </strong><br>
+      David Pyritz
+    </p>
+    <p><strong>Kontakt:</strong> <br>
+      Telefon: <br>
+      E-Mail: <a href='mailto:#'></a></p><br>
+    <br>
+    Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a
+      href="https://www.kanzlei-hasselbach.de/standorte/frankfurt/" rel="nofollow">Kanzlei Hasselbach, Frankfurt</a>
+    <br>
+    <br>
+    <b>Icon im Browser Titel</b>
+    Bild von <a
+      href="https://pixabay.com/de/users/publicdomainpictures-14/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=316399">PublicDomainPictures</a>
+    auf <a
+      href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=316399">Pixabay</a>
+    <br>
+    <br>
+    <b>Hintergrund Bild</b> von <a
+      href="https://pixabay.com/de/users/rds2-451718/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1052092">Roger
+      Sexton</a> auf <a
+      href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1052092">Pixabay</a>
+    <br>
+    <br>
+    <b>Schrift ist von</b>
+    <a href="https://gwfh.mranftl.com/fonts/jacques-francois-shadow?subsets=latin">WebFontsHelper</a>
+    <br>
+    <br>
+    <b>walking</b>
+    <a href="https://freesound.org/people/felix.blume/sounds/705744/">Freesound/felix.blume</a>
+    <br>
+    <br>
+    <b>Background Music</b>
+    <a href="https://freesound.org/people/AudioCoffee/sounds/709989/">Freesound/AudioCoffee</a>
+    <br>
+    <br>
+    <b>Chicken Die</b>
+    <a href="https://freesound.org/people/Preacher13/sounds/673255/">Freesound/Preacher13</a>
+    <br>
+    <br>
+    <b>throw bottle</b>
+    <a href="https://freesound.org/people/cabled_mess/sounds/352068/">Freesound/cabled_mess</a>
+    <br>
+    <b>collect coin</b>
+    <a href="https://freesound.org/people/bradwesson/sounds/135936/">Freesound/bradwesson</a>
+    <br>
+    <br>
+    <b>endboss cry</b>
+    <a href="https://freesound.org/people/esperar/sounds/170807/">Freesound/esperar</a>
+    <br>
+    <br>
+    <b>endboss die</b>
+    <a href="https://freesound.org/people/pionium/sounds/40729/">Freesound/pionium</a>
+    <br>
+    <br>
+    <b>collect bottle</b>
+    <a href="https://freesound.org/people/DrinkingWindGames/sounds/684015/">Freesound/DrinkingWindGames</a>
+    <br>
+    <br>
+    <b>character get hurt</b>
+    <a href="https://freesound.org/people/thecheeseman/sounds/44428/">Freesound/thecheeseman</a>
+    <br>
+    <br>
+  </div>
 </body>
+
 </html>

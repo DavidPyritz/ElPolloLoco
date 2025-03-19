@@ -1,0 +1,135 @@
+@media (min-width: 1024px) { /* Desktop */
+    .mobile-controls {
+        display: none !important;
+    }
+}
+
+@media (pointer:coarse) {
+    .left-controls {
+        display: flex;
+        gap: 35px;
+        pointer-events: auto;
+        margin-left: 20px;
+    }
+
+    .right-controls {
+        display: none;
+        gap: 35px;
+        pointer-events: auto;
+        margin-right: 40px;
+    }
+
+    .control-btn {
+        background: none;
+        color: white;
+        border: 2px solid white;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        min-width: 70px;
+        padding: 8px;
+        user-select: none;
+        outline: none;
+        touch-action: manipulation;
+    }
+
+    .control-btn:active {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 720px) {
+    h1 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 32px;
+        width: 90%;
+    }
+
+    #rotate-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        font-size: 22px;
+        text-align: center;
+        z-index: 10000;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        pointer-events: none;
+    }
+
+    #rotate-message p {
+        pointer-events: auto;
+    }
+
+    .buttons {
+        top: 40px;
+        right: 40px;
+    }
+
+    .responsButton {
+        display: none;
+    }
+
+    #rotate-message img {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    #mainContent {
+        display: none;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        z-index: 10001;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer a {
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 720px) and (orientation: landscape) {
+    #rotate-message {
+        display: none;
+    }
+
+    #mainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+}
+
+.d-none {
+    display: none;
+}

@@ -1,5 +1,13 @@
+/**
+ * Represents a collectible coin in the game world.
+ * Coins are used to increase the player's score.
+ * Inherits from `DrawableObject`.
+ */
 class SpawnCoin extends DrawableObject {
 
+    /**
+     * Defines hitbox offsets for collision detection.
+     */
     offset = {
         top: 20,
         left: 30,
@@ -19,9 +27,13 @@ class SpawnCoin extends DrawableObject {
         'img/8_coin/full_rotating_coin_8.png'
     ];
 
+    /**
+ * Creates a new `SpawnCoin` instance with a random position.
+ * The coin will have an animation effect.
+ */
     constructor() {
-        super().loadImage(this.IMAGES[0]); // Erstes Bild laden
-        this.loadImages(this.IMAGES); // Alle Bilder vorladen
+        super().loadImage(this.IMAGES[0]);
+        this.loadImages(this.IMAGES);
         this.y = 150;
         this.width = 100;
         this.height = 70;
@@ -30,11 +42,15 @@ class SpawnCoin extends DrawableObject {
         this.animate();
     }
 
+    /**
+ * Animates the coin by cycling through the `IMAGES` array.
+ * The animation runs in a loop, updating every 100ms.
+ */
     animate() {
         let i = 0;
         setInterval(() => {
             this.img = this.imageCache[this.IMAGES[i]];
-            i = (i + 1) % this.IMAGES.length; // Zyklisch durch die Bilder wechseln
-        }, 100); // Wechsel alle 100ms
+            i = (i + 1) % this.IMAGES.length;
+        }, 100);
     }
 }

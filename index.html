@@ -5,78 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive-style.css">
     <link rel="stylesheet" href="./font-style.css">
     <title>Document</title>
     <link rel="shortcut icon" href="img/icon/hat-316399_640.jpg">
     <script src="./models/drawable-object.class.js"></script>
     <script src="./models/soundManager.class.js"></script>
+    <script src="./js/template.js"></script>
     <script src="./models/movable-object.class.js"></script>
     <script src="./models/character.class.js"></script>
     <script src="./models/chicken.class.js"></script>
+    <script src="./models/chicken-minis-class.js"></script>
     <script src="./models/cloud.class.js"></script>
     <script src="./models/status-bar-health.class.js"></script>
     <script src="./models/status-bar-coin.class.js"></script>
     <script src="./models/status-bar-bottle.class.js"></script>
     <script src="./models/status-bar-boss.js"></script>
     <script src="./models/world.class.js"></script>
+    <script src="./models/world.class.chicken.js"></script>
     <script src="./models/background-object.class.js"></script>
     <script src="./models/keyboard.class.js"></script>
     <script src="./models/level.class.js"></script>
     <script src="./models/throwable-object.class.js"></script>
     <script src="./models/endboss.class.js"></script>
-    <script src="./levels/level1.js"></script>
     <script src="./models/spawn-bottle.class.js"></script>
     <script src="./models/spawn-coin.class.js"></script>
+    <script src="./levels/level1.js"></script>
     <script src="./js/game.js"></script>
-
+    <script src="./js/game-buttons.js"></script>
 </head>
 
 <body>
-    <div id="rotate-message">
-        <p><span class="shake">📱</span> Bitte drehe dein Gerät ins Querformat, um zu spielen! <span class="spin">🔄</span></p>
-    </div>
-
-    <div class="intro-container">
-        <h1>El Pollo Loco</h1>
-
-        <div class="content" id="mainContent">
-            <canvas class="d-none" id="canvas" width="720" height="480"></canvas>
-            <img id="introScreen" class="intro-logo" src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
-
-            <div class="buttons">
-                <button class="button1 shadow" onkeyup="event.preventDefault()" onclick="startGame()">StartGame</button>
-                <button class="button1 responsButton" onkeyup="event.preventDefault()" onclick="fullScreen()">Fullscreen</button>
-                <button class="button1" onkeyup="event.preventDefault()" onclick="startStopMusic()">Audio On/Off</button>
-                <button class="button1" onkeyup="event.preventDefault()" onclick="showManual()">Manual</button>
-            </div>
-
-            <div id="manualContainer"></div>
-            <div id="overlay" class="overlay" onclick="closeManual()"></div>
+    <div class="main-content">
+        <div id="rotate-message">
+            <p><span class="shake">📱</span> Bitte drehe dein Gerät ins Querformat, um zu spielen! <span
+                    class="spin">🔄</span></p>
         </div>
-
-        <!-- 🔥 Mobile Steuerungsbuttons erscheinen NUR in der Responsive-Version -->
-        <div class="mobile-controls">
-            <!-- Linke Steuerung -->
-            <div class="left-controls">
-                <button class="control-btn left" ontouchstart="setKey('LEFT', true)" ontouchend="setKey('LEFT', false)">◀</button>
-                <button class="control-btn right" ontouchstart="setKey('RIGHT', true)" ontouchend="setKey('RIGHT', false)">▶</button>
+        <div class="intro-container">
+            <h1>El Pollo Loco</h1>
+            <div class="content" id="mainContent">
+                <canvas class="d-none" id="canvas" width="720" height="480"></canvas>
+                <img id="introScreen" class="intro-logo" src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+                <div class="buttons">
+                    <button class="button1 shadow" onkeyup="event.preventDefault()"
+                        onclick="startGame()">StartGame</button>
+                    <button class="button1" onkeyup="event.preventDefault()" onclick="startStopMusic()">Audio
+                        On/Off</button>
+                    <button class="button1" onkeyup="event.preventDefault()" onclick="showManual()">Manual</button>
+                </div>
+                <div id="manualContainer"></div>
+                <div id="overlay" class="overlay" onclick="closeManual()"></div>
             </div>
-            
-            <!-- Rechte Steuerung -->
-            <div class="right-controls">
-                <button class="control-btn jump" ontouchstart="setKey('SPACE', true)" ontouchend="setKey('SPACE', false)">🔼</button>
-                <button class="control-btn throw" ontouchstart="setKey('D', true)" ontouchend="setKey('D', false)">🍾</button>
+            <div class="mobile-controls">
+                <div class="left-controls">
+                    <button class="control-btn left" ontouchstart="handleTouchStart(event, 'LEFT')"
+                        ontouchend="handleTouchEnd(event, 'LEFT')" ontouchcancel="handleTouchCancel(event, 'LEFT')"
+                        onmouseleave="handleTouchCancel(event, 'LEFT')">
+                        ◀
+                    </button>
+                    <button class="control-btn right" ontouchstart="handleTouchStart(event, 'RIGHT')"
+                        ontouchend="handleTouchEnd(event, 'RIGHT')" ontouchcancel="handleTouchCancel(event, 'RIGHT')"
+                        onmouseleave="handleTouchCancel(event, 'RIGHT')">
+                        ▶
+                    </button>
+                </div>
+                <div class="right-controls">
+                    <button class="control-btn jump" ontouchstart="handleTouchStart(event, 'SPACE')"
+                        ontouchend="handleTouchEnd(event, 'SPACE')" ontouchcancel="handleTouchCancel(event, 'SPACE')"
+                        onmouseleave="handleTouchCancel(event, 'SPACE')">
+                        ⬜
+                    </button>
+                    <button class="control-btn throw" ontouchstart="handleTouchStart(event, 'D')"
+                        ontouchend="handleTouchEnd(event, 'D')" ontouchcancel="handleTouchCancel(event, 'D')"
+                        onmouseleave="handleTouchCancel(event, 'D')">
+                        🍾
+                    </button>
+                </div>
             </div>
         </div>
-        
-
         <div class="footer">
             <span class="spanStyleFooter">(c) Copyright 2025 Developer Akademie GmbH</span>
             <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
 </body>
-
-
 
 </html>
