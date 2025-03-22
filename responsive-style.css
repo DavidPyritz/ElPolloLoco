@@ -1,4 +1,4 @@
-@media (min-width: 1024px) { /* Desktop */
+@media (min-width: 1500px) { /* Desktop */
     .mobile-controls {
         display: none !important;
     }

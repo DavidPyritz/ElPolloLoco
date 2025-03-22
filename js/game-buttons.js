@@ -28,8 +28,8 @@ function createHomeButton() {
 }
 
 /**
- * Blendet die mobile Steuerung für Links/Rechts ein (aber nicht die rechten Buttons!).
- */
+* Shows the mobile left/right controls (but not the right buttons!).
+*/
 function showMobileControls() {
     let controls = document.querySelector('.mobile-controls');
     if (controls) {
@@ -38,8 +38,8 @@ function showMobileControls() {
 }
 
 /**
- * Blendet die gesamte mobile Steuerung aus (auf dem Startbildschirm oder Game Over).
- */
+* Hides all mobile controls (on the home screen or Game Over).
+*/
 function hideMobileControls() {
     let controls = document.querySelector('.mobile-controls');
     let rightControls = document.querySelector('.right-controls');
@@ -48,8 +48,8 @@ function hideMobileControls() {
 }
 
 /**
- * Blendet nur die "right-controls" ein, wenn das Spiel gestartet wurde.
- */
+* Only displays the right controls when the game is started.
+*/
 function showRightControls() {
     let rightControls = document.querySelector('.right-controls');
     if (rightControls) {
@@ -58,8 +58,8 @@ function showRightControls() {
 }
 
 /**
- * Blendet die drei Buttons (StartGame, Audio, Manual) aus, wenn das Spiel gestartet wird.
- */
+* Hides the three buttons (StartGame, Audio, Manual) when the game starts.
+*/
 function hideMenuButtons() {
     let buttons = document.querySelector('.buttons');
     if (buttons) {
@@ -68,8 +68,8 @@ function hideMenuButtons() {
 }
 
 /**
- * Zeigt die drei Buttons (StartGame, Audio, Manual) wieder an, wenn das Spiel endet.
- */
+* Displays the three buttons (StartGame, Audio, Manual) again when the game ends.
+*/
 function showMenuButtons() {
     let buttons = document.querySelector('.buttons');
     if (buttons) {

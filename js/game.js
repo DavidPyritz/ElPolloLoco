@@ -136,10 +136,10 @@ function startGame() {
 }
 
 /**
- * Zeigt den Endscreen und blendet die mobile Steuerung aus.
- * Die Menü-Buttons werden dabei wieder eingeblendet.
- * @param {string} type - Der Endscreen-Typ ('win' oder 'lose').
- */
+* Shows the end screen and hides the mobile controls.
+* The menu buttons are redisplayed.
+* @param {string} type - The end screen type ('win' or 'lose').
+*/
 function showEndScreen(type) {
     toggleEndScreen(type);
     removeOldButtons();
@@ -161,8 +161,8 @@ function restartGame() {
 }
 
 /**
- * Geht zum Startbildschirm zurück und blendet die mobile Steuerung aus.
- */
+* Returns to the home screen and hides the mobile controls.
+*/
 function goToHomeScreen() {
     hideMobileControls();
     showMenuButtons();

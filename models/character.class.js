@@ -85,7 +85,7 @@ class Character extends MovableObject {
     * Initializes the character, loads assets, and starts animations.
     */
     constructor() {
-        super().loadImage(this.IMAGES_IDLE[0]); // Charakter beginnt mit Idle-Bild
+        super().loadImage(this.IMAGES_IDLE[0]); // Character starts with idle image
         this.soundManager = soundManager;
         this.world = { keyboard: {} };
         this.loadImages(this.IMAGES_WALKING);
@@ -96,7 +96,7 @@ class Character extends MovableObject {
         this.loadImages(this.IMAGES_IDLE);
         this.applyGravity();
         this.animate();
-        this.checkIdleTime(); // Überprüft Inaktivität
+        this.checkIdleTime(); // Checks inactivity
     }
 
     /**
@@ -113,9 +113,8 @@ class Character extends MovableObject {
     }
 
     /**
-     * Überprüft alle 500ms, ob der Charakter 4 Sekunden nach einem Treffer
-     * in den langen Idle-Modus wechseln soll.
-     */
+    * Checks every 500ms whether the character should enter long idle mode 4 seconds after being hit.
+    */
     checkIdleTime() {
         setInterval(() => {
             let idleTime = Date.now() - this.lastMovementTime;
@@ -139,8 +138,8 @@ class Character extends MovableObject {
     }
 
     /**
-     * Spielt die lange Idle-Animation ab, solange der Charakter nicht getroffen wird.
-     */
+    * Plays the long idle animation as long as the character isn't hit.
+    */
     playLongIdleAnimation() {
         let index = 0;
         this.idleLongInterval = setInterval(() => {
@@ -154,8 +153,8 @@ class Character extends MovableObject {
     }
 
     /**
-   * Stoppt die lange Idle-Animation sofort.
-   */
+    * Stops the long idle animation immediately.
+    */
     stopLongIdleAnimation() {
         if (this.idleLongInterval) {
             clearInterval(this.idleLongInterval);
@@ -165,8 +164,8 @@ class Character extends MovableObject {
     }
 
     /**
-     * Prüft, ob der Charakter sich bewegt.
-     */
+    * Checks whether the character is moving.
+    */
     isMoving() {
         return this.world.keyboard.RIGHT || this.world.keyboard.LEFT || this.world.keyboard.SPACE;
     }
@@ -215,7 +214,7 @@ class Character extends MovableObject {
     playCharacter() {
         if (this.isDead()) {
             this.playAnimation(this.IMAGES_DEAD);
-        } else if (this.isHurt()) { 
+        } else if (this.isHurt()) {
             this.stopLongIdleAnimation();
             this.playAnimation(this.IMAGES_HURT);
         } else if (this.isAboveGround()) {
@@ -233,7 +232,7 @@ class Character extends MovableObject {
     jump() {
         this.speedY = 30;
         this.lastMovementTime = Date.now();
-        this.firstLanding = false; // Nach dem Sprung ist er nicht mehr auf dem Boden
+        this.firstLanding = false; // After the jump he is no longer on the ground
     }
 
     /**
@@ -241,7 +240,7 @@ class Character extends MovableObject {
   */
     onLand() {
         if (!this.firstLanding) {
-            this.playAnimation(this.IMAGES_IDLE); // Zeigt das Idle-Bild nur beim ersten Landen nach dem Sprung
+            this.playAnimation(this.IMAGES_IDLE); // Shows the idle image only when landing for the first time after jumping
             this.firstLanding = true;
         }
     }

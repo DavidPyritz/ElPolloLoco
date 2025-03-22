@@ -25,9 +25,9 @@ class Chickenminis extends MovableObject {
      * Defines hitbox offsets for collision detection.
      */
     offset = {
-        top: 5,  // Etwas mehr Abstand nach oben
-        bottom: 5, // Etwas mehr Abstand nach unten
-        left: 5,  // Kleinere Breite, daher geringerer Offset
+        top: 5,
+        bottom: 5,
+        left: 5,
         right: 5
     };
 
