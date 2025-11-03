@@ -1,11 +1,11 @@
 # El Pollo Loco – Projektinfos
 
 ## 1) Beschreibung
-- **Pitch (1–2 Sätze):**  
-  Das Hühnchen Jump & Run Spiel orientiert sich an die Leute, die zwischendurch mal eine Pause gönnen und Lust haben auf ein lustiges Game.
+- **Pitch:**  
+  "El Pollo Loco" ist ein unterhaltsames Jump & Run Spiel, das sich perfekt für eine kurze Auszeit eignet. Ideal für alle, die zwischendurch Spaß haben möchten, ohne sich lange einzuarbeiten.
 
 - **Zielgruppe:**  
-  Gamer.
+  Gamer, die auf der Suche nach einem unkomplizierten, aber fesselnden Spiel sind – perfekt für kurze Pausen.
 
 - **Hauptfeatures:**  
   - Sammle Coins auf deinem Weg durch die Level.
