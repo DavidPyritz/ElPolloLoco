@@ -112,7 +112,7 @@
   Kurz & beschreibend (z. B. „update copyright“, „files added“, „first commit“)
 
 - **Code-Style/Tools:**  
-  Plain JS/HTML/CSS; kein Linter; optional Prettier.
+  Plain JS/HTML/CSS;
 
 - **Tests/CI:**  
   Keine
