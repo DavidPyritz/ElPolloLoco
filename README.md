@@ -19,8 +19,8 @@
   - BE: –
   - DB: –
   - Auth: –
-  - Cloud/Hosting: GitHub Pages (oder Netlify/Vercel)
-  - Tooling: npm, Vite (oder Webpack), ESLint, Prettier
+  - Cloud/Hosting: GitHub Pages
+  - Tooling: npm
 
 - **Status & Lizenz:**  
   - **Status:** Stable (v1.0.0)
@@ -53,9 +53,6 @@
     - **NC:** Keine kommerzielle Nutzung
   
     Ausnahmen und Drittanbieter-Assets (mit Original-Lizenzen) sind in `/assets/README.md` aufgeführt.
-
-- **Screenshots/GIFs (optional):**  
-  *(Optional hinzufügen, falls vorhanden)*
 
 ## 2) Dev-Setup
 
