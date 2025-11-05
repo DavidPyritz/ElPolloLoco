@@ -15,7 +15,7 @@
   - Soundeffekte und Musik für extra Spielgefühl.
 
 - **Tech-Stack (FE/BE/DB/Auth/Cloud):**  
-  - FE: HTML5, CSS/SCSS, JavaScript (ES6+)
+  - FE: HTML5, CSS/SCSS, JavaScript
   - BE: –
   - DB: –
   - Auth: –
