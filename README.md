@@ -109,7 +109,7 @@
   `main`
 
 - **Commits:**  
-  Kurz & beschreibend (z. B. „update copyright“, „files added“, „first commit“)
+  update readme“, „files added“, „first commit“
 
 - **Code-Style/Tools:**  
   Plain JS/HTML/CSS;
